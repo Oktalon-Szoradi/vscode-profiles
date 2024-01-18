@@ -67,6 +67,7 @@ Has extensions required for fullstack development that uses ESLint, Vue, Vitest.
     "'",
     "`"
   ],
+  "vue3snippets.singleQuote": true,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.productIconTheme": "material-product-icons"
 }
