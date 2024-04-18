@@ -434,7 +434,6 @@ Has extensions required for fullstack development that uses ESLint, Vue, Vitest.
 ```
 
 #### Extensions:
-! List may not be entirely accurate
 
 - .gitignore Generator (piotrpalarz.vscode-gitignore-generator)
 - .NET Install Tool (ms-dotnettools.vscode-dotnet-runtime)
