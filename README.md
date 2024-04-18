@@ -23,7 +23,8 @@ Has extensions required for fullstack development that uses ESLint, Vue, Vitest.
   "[vue]": {
     "editor.defaultFormatter": "Wscats.vue"
   },
-  "dotenv.enableAutocloaking": false,
+  "accessibility.voice.keywordActivation": "chatInContext",
+  "dotenv.enableAutocloaking": true,
   "editor.cursorBlinking": "phase",
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.fontFamily": "'Fira Code', 'monospace', monospace",
@@ -40,7 +41,34 @@ Has extensions required for fullstack development that uses ESLint, Vue, Vitest.
   "editor.suggestSelection": "first",
   "editor.tabSize": 2,
   "editor.tokenColorCustomizations": {
-    "textMateRules": []
+    "[*Dark*]": {
+      "textMateRules": [
+        {
+          "scope": "ref.matchtext",
+          "settings": {
+            "foreground": "#fff"
+          }
+        }
+      ]
+    },
+    "[*Light*]": {
+      "textMateRules": [
+        {
+          "scope": "ref.matchtext",
+          "settings": {
+            "foreground": "#000"
+          }
+        }
+      ]
+    },
+    "textMateRules": [
+      {
+        "scope": "keyword.other.dotenv",
+        "settings": {
+          "foreground": "#FF000000"
+        }
+      }
+    ]
   },
   "editor.wordWrap": "off",
   "eslint.format.enable": true,
@@ -48,6 +76,7 @@ Has extensions required for fullstack development that uses ESLint, Vue, Vitest.
     ".env*": "dotenv"
   },
   "files.autoSave": "afterDelay",
+  "git.autofetch": true,
   "indentRainbow.colors": [
     "rgba(7, 142, 112, 0.1)",
     "rgba(38, 207, 170, 0.1)",
@@ -62,6 +91,7 @@ Has extensions required for fullstack development that uses ESLint, Vue, Vitest.
     "rgba(153, 232, 193, 0.1)",
     "rgba(38, 207, 170, 0.1)"
   ],
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
   "togglequotes.chars": [
     "\"",
     "'",
@@ -130,37 +160,40 @@ Has extensions required for fullstack development that uses ESLint, Vue, Vitest.
 
 #### Extensions:
 
-- Better Comments (aaron-bond.better-comments)
-- undefined (bradgashler.htmltagwrap)
+- Vue - Official (Vue.volar)
 - Auto Import (steoates.autoimport)
+- Better Comments (aaron-bond.better-comments)
 - Dotenv Official +Vault (dotenv.dotenv-vscode)
-- ESLint (dbaeumer.vscode-eslint)
 - Error Lens (usernamehw.errorlens)
+- ESLint (dbaeumer.vscode-eslint)
+- eslint-disable-snippets (drKnoxy.eslint-disable-snippets)
+- htmltagwrap (bradgashler.htmltagwrap)
 - Import Cost (wix.vscode-import-cost)
+- indent-rainbow (oderwat.indent-rainbow)
+- JavaScript Auto Backticks (chamboug.js-auto-backticks)
 - JavaScript Booster (sburg.vscode-javascript-booster)
-- Javascript Auto Backticks (chamboug.js-auto-backticks)
 - Live Preview (ms-vscode.live-server)
-- Live Server (Five Server) (yandeu.five-server)
-- Material Icon Theme (pkief.material-icon-theme)
-- Material Product Icons (pkief.material-product-icons)
+- Material Icon Theme (PKief.material-icon-theme)
+- Material Product Icons (PKief.material-product-icons)
+- npm Intellisense (christian-kohler.npm-intellisense)
 - Package Json Upgrade (codeandstuff.package-json-upgrade)
 - REST Client (humao.rest-client)
-- SCSS Formatter (sibiraj-s.vscode-scss-formatter)
 - Sass (.sass only) (syler.sass-indented)
+- SCSS Formatter (sibiraj-s.vscode-scss-formatter)
 - Sort JSON objects (richie5um2.vscode-sort-json)
 - Sort package.json (unional.vscode-sort-package-json)
-- Surround (sword.vscode-surround)
-- Svg Preview (simonsiefke.svg-preview)
-- Toggle Quotes (britesnow.vscode-toggle-quotes)
-- Twoslash Query Comments (orta.vscode-twoslash-queries)
-- Vitest (zixuanchen.vitest-explorer)
-- Vue 3 Support - All In One (wscats.vue)
-- Vue Language Features (Volar) (vue.volar)
-- Vue VSCode Snippets (sdras.vue-vscode-snippets)
-- eslint-disable-snippets (drknoxy.eslint-disable-snippets)
-- npm Intellisense (christian-kohler.npm-intellisense)
-- undefined (oderwat.indent-rainbow)
+- Stylelint (stylelint.vscode-stylelint)
+- Surround (Sword.vscode-surround)
+- Svg Preview (SimonSiefke.svg-preview)
+- Toggle Quotes (BriteSnow.vscode-toggle-quotes)
+- Twoslash Query Comments (Orta.vscode-twoslash-queries)
+- Vitest (vitest.explorer)
 - vscode-styled-components (styled-components.vscode-styled-components)
+- Vue 3 Support - All In One (Wscats.vue)
+- Vue VSCode Snippets (sdras.vue-vscode-snippets)
+- GitHub Pull Requests (GitHub.vscode-pull-request-github)
+- jsdoc (lllllllqw.jsdoc)
+- Live Server (Five Server) (yandeu.five-server)
 
 ### Oktalon
 
@@ -191,6 +224,9 @@ Has extensions required for fullstack development that uses ESLint, Vue, Vitest.
   },
   "[latex]": {
     "editor.defaultFormatter": "James-Yu.latex-workshop"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
   "[python]": {
     "editor.formatOnType": true
@@ -223,22 +259,22 @@ Has extensions required for fullstack development that uses ESLint, Vue, Vitest.
   "editor.suggestSelection": "first",
   "editor.tabSize": 2,
   "editor.tokenColorCustomizations": {
-    "[*Light*]": {
-      "textMateRules": [
-        {
-          "scope": "ref.matchtext",
-          "settings": {
-            "foreground": "#000"
-          }
-        }
-      ]
-    },
     "[*Dark*]": {
       "textMateRules": [
         {
           "scope": "ref.matchtext",
           "settings": {
             "foreground": "#fff"
+          }
+        }
+      ]
+    },
+    "[*Light*]": {
+      "textMateRules": [
+        {
+          "scope": "ref.matchtext",
+          "settings": {
+            "foreground": "#000"
           }
         }
       ]
@@ -260,7 +296,6 @@ Has extensions required for fullstack development that uses ESLint, Vue, Vitest.
     "yaml": false
   },
   "html.autoClosingTags": true,
-  "http.proxyAuthorization": null,
   "indentRainbow.colorOnWhiteSpaceOnly": true,
   "indentRainbow.colors": [
     "rgba(7, 142, 112, 0.1)",
@@ -285,7 +320,10 @@ Has extensions required for fullstack development that uses ESLint, Vue, Vitest.
     "COBOL_PCOB_LISTFILE",
     "plaintext"
   ],
-  "indentRainbow.ignoreErrorLanguages": ["*", "markdown"],
+  "indentRainbow.ignoreErrorLanguages": [
+    "*",
+    "markdown"
+  ],
   "javascript.autoClosingTags": true,
   "javascript.format.semicolons": "remove",
   "javascript.preferences.quoteStyle": "single",
@@ -306,23 +344,20 @@ Has extensions required for fullstack development that uses ESLint, Vue, Vitest.
   "prettier.trailingComma": "none",
   "prettier.useEditorConfig": false,
   "prettier.vueIndentScriptAndStyle": true,
-  "remote.SSH.configFile": "C:\\Users\\Talon-School\\.ssh\\config",
-  "remote.SSH.remotePlatform": {
-    "192.168.31.105": "linux",
-    "192.168.45.105": "linux",
-    "192.168.68.111": "linux",
-    "192.168.68.121": "linux",
-    "192.168.68.131": "linux",
-    "192.168.93.105": "linux",
-    "192.168.234.105": "linux"
-  },
   "scssFormatter.singleQuote": true,
   "scssFormatter.trailingComma": "none",
+  "security.allowedUNCHosts": [
+    "wsl.localhost"
+  ],
   "standard.autoFixOnSave": true,
   "standard.enableGlobally": true,
-  "terminal.integrated.defaultProfile.windows": "Command Prompt",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.fontFamily": "'Fira Code', 'monospace', monospace",
-  "togglequotes.chars": ["\"", "'", "`"],
+  "togglequotes.chars": [
+    "\"",
+    "'",
+    "`"
+  ],
   "typescript.autoClosingTags": true,
   "typescript.format.semicolons": "remove",
   "typescript.preferences.quoteStyle": "single",
@@ -399,83 +434,89 @@ Has extensions required for fullstack development that uses ESLint, Vue, Vitest.
 ```
 
 #### Extensions:
+! List may not be entirely accurate
 
+- .gitignore Generator (piotrpalarz.vscode-gitignore-generator)
+- .NET Install Tool (ms-dotnettools.vscode-dotnet-runtime)
+- AsciiDoc (asciidoctor.asciidoctor-vscode)
+- Auto Import (steoates.autoimport)
 - Autoprefixer (mrmlnc.vscode-autoprefixer)
 - Better Comments (aaron-bond.better-comments)
-- Bootstrap IntelliSense (hossaini.bootstrap-intellisense)
 - C# (ms-dotnettools.csharp)
 - CSS Flexbox Cheatsheet (dzhavat.css-flexbox-cheatsheet)
 - CSS Formatter (aeschli.vscode-css-formatter)
+- CSS sorter (zascal.CSS-sorter)
 - Dotenv Official +Vault (dotenv.dotenv-vscode)
-- ESLint (dbaeumer.vscode-eslint)
+- Error Lens (usernamehw.errorlens)
+- eslint-disable-snippets (drKnoxy.eslint-disable-snippets)
 - Format Files (jbockle.jbockle-format-files)
-- GitHub Copilot (github.copilot)
-- GitHub Copilot Chat (github.copilot-chat)
-- GitHub Markdown Preview (bierner.github-markdown-preview)
-- HTML CSS Support (ecmel.vscode-html-css)
+- GitHub Copilot (GitHub.copilot)
+- GitHub Copilot Chat (GitHub.copilot-chat)
+- *GitHub Markdown Preview (bierner.github-markdown-preview)*
 - Headwind (heybourn.headwind)
-- Inline fold (moalamri.inline-fold)
-- JavaScript Docstrings (massi.javascript-docstrings)
-- JavaScript standardjs styled snippets (capaj.vscode-standardjs-snippets)
+- HTML CSS Support (ecmel.vscode-html-css)
+- htmltagwrap (bradgashler.htmltagwrap)
+- Import Cost (wix.vscode-import-cost)
+- intent-rainbow (oderwat.indent-rainbow)
 - Javascript Auto Backticks (chamboug.js-auto-backticks)
-- LaTeX Workshop (james-yu.latex-workshop)
+- JavaScript Booster (sburg.vscode-javascript-booster)
+- JavaScript Docstrings (Massi.javascript-docstrings)
+- JavaScript standardjs styled snippets (capaj.vscode-standardjs-snippets)
+- LaTeX Workshop (James-Yu.latex-workshop)
+- Live Preview (ms-vscode.live-server)
+- Live Server (ritwickdey.LiveServer)
+- Live Share (ms-vsliveshare.vsliveshare)
+- Markdown All in One (yzhang.markdown-all-in-one)
 - Markdown Checkboxes (bierner.markdown-checkbox)
 - Markdown Emoji (bierner.markdown-emoji)
 - Markdown Footnotes (bierner.markdown-footnotes)
+- Markdown PDF (yzane.markdown-pdf)
 - Markdown Preview Github Styling (bierner.markdown-preview-github-styles)
 - Markdown Preview Mermaid Support (bierner.markdown-mermaid)
 - Markdown yaml Preamble (bierner.markdown-yaml-preamble)
 - Marp for VS Code (marp-team.marp-vscode)
+- Material Icon Theme (PKief.material-icon-theme)
+- Material Product Icons (PKief.material-product-icons)
+- npm Intellisense (christian-kohler.npm-intellisense)
 - Package Json Upgrade (codeandstuff.package-json-upgrade)
 - Path Intellisense (christian-kohler.path-intellisense)
 - Prettier - Code formatter (esbenp.prettier-vscode)
-- REST Client (humao.rest-client)
-- Toggle Quotes (britesnow.vscode-toggle-quotes)
-- Vue Snippets StandardJS (andersonmfjr.vue-snippets-standardjs)
-- undefined (bradgashler.htmltagwrap)
-- .NET Install Tool (ms-dotnettools.vscode-dotnet-runtime)
-- .gitignore Generator (piotrpalarz.vscode-gitignore-generator)
-- Auto Import (steoates.autoimport)
-- Bootstrap Class Autocomplete (torresgol10.bootstrap-class-autocomplete)
-- CSS sorter (zascal.css-sorter)
-- Error Lens (usernamehw.errorlens)
-- Import Cost (wix.vscode-import-cost)
-- JavaScript Booster (sburg.vscode-javascript-booster)
-- LTeX – LanguageTool grammar/spell checking (valentjn.vscode-ltex)
-- Live Preview (ms-vscode.live-server)
-- Live Server (ritwickdey.liveserver)
-- Live Share (ms-vsliveshare.vsliveshare)
-- Markdown All in One (yzhang.markdown-all-in-one)
-- Markdown PDF (yzane.markdown-pdf)
-- Markdown Preview Enhanced (shd101wyy.markdown-preview-enhanced)
-- Material Icon Theme (pkief.material-icon-theme)
-- Material Product Icons (pkief.material-product-icons)
-- Prettier ESLint (rvest.vs-code-prettier-eslint)
 - Prettier-Standard - JavaScript formatter (numso.prettier-standard-vscode)
+- Pylance (ms-python.vscode-pylance)
+- Python (ms-python.python)
+- Python Debugger (ms-python.debugpy)
 - Rainbow CSV (mechatroner.rainbow-csv)
 - Remote - SSH (ms-vscode-remote.remote-ssh)
 - Remote - SSH: Editing Configuration Files (ms-vscode-remote.remote-ssh-edit)
 - Remote Explorer (ms-vscode.remote-explorer)
-- undefined (oderwat.indent-rainbow)
-- SCSS Formatter (sibiraj-s.vscode-scss-formatter)
-- SQLite Viewer (qwtel.sqlite-viewer)
-- SVG (jock.svg)
+- REST Client (humao.rest-client)
 - Sass (.sass only) (syler.sass-indented)
+- SCSS Formatter (sibiraj-s.vscode-scss-formatter)
 - Sort JSON objects (richie5um2.vscode-sort-json)
 - Sort package.json (unional.vscode-sort-package-json)
+- SQLite Viewer (qwtel.sqlite-viewer)
 - StandardJS - JavaScript Standard Style (standard.vscode-standard)
 - Stylelint (stylelint.vscode-stylelint)
-- Surround (sword.vscode-surround)
-- Svg Preview (simonsiefke.svg-preview)
+- Surround (Sword.vscode-surround)
+- SVG (jock.svg)
+- Svg Preview (SimonSiefke.svg-preview)
 - Tailwind CSS IntelliSense (bradlc.vscode-tailwindcss)
-- Twoslash Query Comments (orta.vscode-twoslash-queries)
-- TypeScript Vue Plugin (Volar) (vue.vscode-typescript-vue-plugin)
-- Vitest (zixuanchen.vitest-explorer)
-- Vue 3 Support - All In One (wscats.vue)
-- Vue Language Features (Volar) (vue.volar)
-- Vue VSCode Snippets (sdras.vue-vscode-snippets)
-- Vue Volar extension Pack (misterj.vue-volar-extention-pack)
-- colorize (kamikillerto.vscode-colorize)
-- eslint-disable-snippets (drknoxy.eslint-disable-snippets)
-- npm Intellisense (christian-kohler.npm-intellisense)
+- Toggle Quotes (BriteSnow.vscode-toggle-quotes)
+- Twoslash Query Comments (Orta.vscode-twoslash-queries)
+- Vitest (vitest.explorer)
 - vscode-styled-components (styled-components.vscode-styled-components)
+- Vue - Official (Vue.volar)
+- Vue 3 Support - All In One (Wscats.vue)
+- *Vue Extension Box (MisterJ.vue-volar-extention-pack)*
+- Vue Snippets StandardJS (andersonmfjr.vue-snippets-standardjs)
+- Vue VSCode Snippets (sdras.vue-vscode-snippets)
+
+Disabled:
+- Bootstrap Class Autocomplete (torresgol10.bootstrap-class-autocomplete)
+- Bootstrap IntelliSense (hossaini.bootstrap-intellisense)
+- colorize (kamikillerto.vscode-colorize)
+- ESLint (dbaeumer.vscode-eslint)
+- Inline fold (moalamri.inline-fold)
+- LTeX – LanguageTool grammar/spell checking (valentjn.vscode-ltex)
+- Markdown Preview Enhanced (shd101wyy.markdown-preview-enhanced)
+- Prettier ESLint (rvest.vs-code-prettier-eslint)
